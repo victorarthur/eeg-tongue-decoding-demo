@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tongue movement decoded from EEG, video examples</title>
+<meta name="description" content="Video examples for the article on decoding tongue movement from scalp EEG: the recorded ultrasound of the tongue with the tracked contour and the contour decoded from the EEG.">
+<style>
+  :root {
+    --paper: #ffffff;
+    --ink: #161616;
+    --quiet: #5e5e5e;
+    --rule: #d8d8d8;
+    --tracked: #148296;   /* the solid contour of the clips */
+    --decoded: #eb6e1e;   /* the dashed contour of the clips */
+    --sector: #000000;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper: #000000; --ink: #f2f2f2; --quiet: #a9a9a9; --rule: #3a3a3a; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    font-variant-numeric: tabular-nums;
+  }
+  .page { max-width: 1120px; margin: 0 auto; padding: 0 20px 72px; }
+  h1 { font-size: clamp(2rem, 4.6vw, 3.1rem); line-height: 1.06; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 20px; }
+  h2 { font-size: 1.3rem; line-height: 1.2; font-weight: 600; margin: 0 0 18px; }
+  p { margin: 0 0 14px; max-width: 68ch; }
+  a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:focus-visible, video:focus-visible { outline: 2px solid var(--tracked); outline-offset: 3px; }
+
+  .intro { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; align-items: end; padding: 56px 0 36px; }
+  .intro p:last-child { margin-bottom: 0; }
+  .key { list-style: none; margin: 0; padding: 0; }
+  .key li { display: grid; grid-template-columns: 76px 1fr; gap: 14px; align-items: center; margin: 12px 0 0; font-size: 0.95rem; line-height: 1.35; }
+  .key svg { display: block; width: 76px; height: 26px; }
+
+  section { border-top: 1px solid var(--rule); padding: 30px 0 34px; }
+  .clips { display: grid; gap: 28px 24px; }
+  .clips.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .clips.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  figure { margin: 0; }
+  video { display: block; width: 100%; height: auto; aspect-ratio: 960 / 748; background: var(--sector); }
+  figcaption { margin-top: 10px; font-size: 0.9rem; line-height: 1.4; }
+  figcaption .said { display: block; }
+  figcaption .gloss, figcaption .facts { display: block; color: var(--quiet); }
+  .notes h2 { margin-bottom: 10px; }
+  footer { border-top: 1px solid var(--rule); padding-top: 22px; color: var(--quiet); font-size: 0.9rem; }
+
+  @media (max-width: 900px) {
+    .intro { grid-template-columns: 1fr; gap: 22px; padding: 36px 0 28px; align-items: start; }
+    .clips.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .clips.two, .clips.three { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="intro">
+    <div>
+      <h1>Tongue movement decoded from EEG</h1>
+      <p>Video examples for the article “Noninvasive decoding of tongue movement from scalp EEG during speech using ultrasound tongue imaging”.</p>
+      <p>Each clip is the recorded ultrasound of the tongue during one test trial, with two contours drawn on it and with the speech of the trial as its sound.</p>
+    </div>
+    <ul class="key">
+      <li>
+        <svg viewBox="0 0 76 26" role="img" aria-label="solid line with round markers">
+          <path d="M4 20 C 20 2, 48 2, 72 16" fill="none" stroke="#148296" stroke-width="2.4"/>
+          <circle cx="4" cy="20" r="3.6" fill="#148296"/><circle cx="28" cy="7.4" r="3.6" fill="#148296"/><circle cx="52" cy="7.6" r="3.6" fill="#148296"/><circle cx="72" cy="16" r="3.6" fill="#148296"/>
+        </svg>
+        <span>The tongue contour that a tracker found in the ultrasound.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 76 26" role="img" aria-label="dashed line with square markers">
+          <path d="M4 22 C 20 6, 48 6, 72 19" fill="none" stroke="#eb6e1e" stroke-width="2.4" stroke-dasharray="6 4"/>
+          <rect x="0.8" y="18.8" width="6.4" height="6.4" fill="none" stroke="#eb6e1e" stroke-width="2"/><rect x="24.8" y="7.6" width="6.4" height="6.4" fill="none" stroke="#eb6e1e" stroke-width="2"/><rect x="48.8" y="8" width="6.4" height="6.4" fill="none" stroke="#eb6e1e" stroke-width="2"/><rect x="68.8" y="15.8" width="6.4" height="6.4" fill="none" stroke="#eb6e1e" stroke-width="2"/>
+        </svg>
+        <span>The contour that the decoder produced from the EEG.</span>
+      </li>
+    </ul>
+  </header>
+
+  <section aria-labelledby="words">
+    <h2 id="words">English words</h2>
+    <div class="clips two">
+      <figure>
+        <video controls playsinline preload="metadata" poster="posters/word-s1.jpg" width="960" height="748">
+          <source src="videos/word-s1.mp4" type="video/mp4">
+          <a href="videos/word-s1.mp4">Download the clip (MP4)</a>
+        </video>
+        <figcaption>
+          <span class="said">Speaker S1: “dance”</span>
+          <span class="facts">Correlation r = 0.88, 1.5 s</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <video controls playsinline preload="metadata" poster="posters/word-s6.jpg" width="960" height="748">
+          <source src="videos/word-s6.mp4" type="video/mp4">
+          <a href="videos/word-s6.mp4">Download the clip (MP4)</a>
+        </video>
+        <figcaption>
+          <span class="said">Speaker S6: “laugh”</span>
+          <span class="facts">Correlation r = 0.86, 1.6 s</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="sentences">
+    <h2 id="sentences">A Hungarian sentence</h2>
+    <p>The three clips are readings of one sentence, “A férfi a fejére szorította két karját.” In English: “The man pressed both arms to his head.”</p>
+    <div class="clips three">
+      <figure>
+        <video controls playsinline preload="metadata" poster="posters/sentence-s6-1.jpg" width="960" height="748">
+          <source src="videos/sentence-s6-1.mp4" type="video/mp4">
+          <a href="videos/sentence-s6-1.mp4">Download the clip (MP4)</a>
+        </video>
+        <figcaption>
+          <span class="said">Speaker S6</span>
+          <span class="facts">r = 0.80, 4.2 s</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <video controls playsinline preload="metadata" poster="posters/sentence-s1.jpg" width="960" height="748">
+          <source src="videos/sentence-s1.mp4" type="video/mp4">
+          <a href="videos/sentence-s1.mp4">Download the clip (MP4)</a>
+        </video>
+        <figcaption>
+          <span class="said">Speaker S1</span>
+          <span class="facts">r = 0.78, 3.2 s</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <video controls playsinline preload="metadata" poster="posters/sentence-s6-2.jpg" width="960" height="748">
+          <source src="videos/sentence-s6-2.mp4" type="video/mp4">
+          <a href="videos/sentence-s6-2.mp4">Download the clip (MP4)</a>
+        </video>
+        <figcaption>
+          <span class="said">Speaker S6, another recording</span>
+          <span class="facts">r = 0.77, 4.5 s</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="notes">
+      <h2>What a clip shows</h2>
+      <p>Each clip is one test trial, a word or a sentence that the decoder did not see in its training. The picture is the ultrasound of the tongue in the mid-sagittal plane, with the front of the tongue to the right.</p>
+      <p>The decoder reads only the EEG, 59 scalp electrodes and four electrodes around the eyes, within 0.77 s of each frame. It is a small network trained for each speaker, and it predicts the tracked contour of every ultrasound frame.</p>
+      <p>A clip runs from the first frame after the start beep to the end of the sound recording of the trial.</p>
+  </section>
+
+  <footer>
+    <p>The recordings belong to the dataset ds007920 on OpenNeuro (under review, so its page does not open yet), doi:10.18112/openneuro.ds007920.v1.0.0. The speakers are named as in the article.</p>
+  </footer>
+
+</div>
+<script>
+  // one clip at a time: starting a clip pauses the others
+  const clips = document.querySelectorAll("video");
+  clips.forEach(v => v.addEventListener("play", () => clips.forEach(o => { if (o !== v) o.pause(); })));
+</script>
+</body>
+</html>
